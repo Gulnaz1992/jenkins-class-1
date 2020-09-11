@@ -20,7 +20,7 @@ if (branch == "master") {
 } else {
   println('Please use proper name for your branch!')
   currentBuild.result = 'FAILURE'	      
-  error('Please use proper name for your branch!s')
+  error('Please use proper name for your branch!')
 }
 
 
@@ -110,7 +110,7 @@ def slavePodTemplate = """
                         booleanParam(name: 'applyChanges', value: true), 
                         booleanParam(name: 'destroyChanges', value: false), 
                         string(name: 'selectedDockerImage', value: "fsadykov/artemis:${gitCommitHash}"), 
-                        string(name: 'environment', value: 'dev')
+                        string(name: 'environment', value: "${environment}")
                         ]
 
                     }
