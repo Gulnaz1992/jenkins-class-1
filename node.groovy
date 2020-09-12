@@ -22,13 +22,6 @@ def slavePodTemplate = """
               topologyKey: "kubernetes.io/hostname"
         containers:
 
-        - name: terraform
-          image: hashicorp/terraform:0.12.27
-          imagePullPolicy: IfNotPresent
-          command:
-          - cat
-          tty: true
-
         - name: docker
           image: docker:latest
           imagePullPolicy: IfNotPresent
@@ -52,12 +45,6 @@ def slavePodTemplate = """
         stage("Docker check") {
             container("docker") {
                 sh 'docker --version'
-            }
-        }
-
-        stage("Terraform Check") {
-            container("terraform") {
-                sh 'terraform version'
             }
         }
       }
