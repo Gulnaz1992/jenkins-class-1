@@ -88,8 +88,7 @@ def slavePodTemplate = """
                             if (params.destroyChanges) {
                                 
                                 println("""
-                                Sorry I can not destroy Tools!!!
-                                I can Destroy only following environments dev, qa, test, stage
+                                Sorry I can not destroy and apply!!
                                 """)
                             }
                         }
